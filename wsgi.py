@@ -1,4 +1,4 @@
-from romaniask-ocr.application import app
+from romaniask.application import app
 
 if __name__ == "__main__":
     app.run()
