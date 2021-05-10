@@ -22,7 +22,7 @@ def preprocess_image():
 
 # Method that populates the response with all the required fields
 def get_required_values(image):
-    pytesseract.pytesseract.tesseract_cmd = ‘/app/.apt/usr/bin/tesseract’;
+    pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract';
 
     config = '--oem 3 --psm 6'
     height, width = image.shape
