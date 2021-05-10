@@ -1,6 +1,6 @@
 # Service main file
 from flask import Flask, request
-from app.service import image_ocr, delete_image
+from service import image_ocr, delete_image
 
 app = Flask(__name__)
 
