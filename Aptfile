@@ -1,6 +1,6 @@
 ffmpeg
 libsm6
-libtext6
+libxext6
 tesseract-ocr
 tesseract-ocr-eng
 tesseract-ocr-ron
