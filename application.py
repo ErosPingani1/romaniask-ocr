@@ -1,8 +1,10 @@
 # Service main file
 from flask import Flask, request
+from flask_cors import CORS
 from service import image_ocr, delete_image
 
-app = Flask(__name__)
+app = Flask(__name__) 
+CORS(app)
 
 @app.route('/')
 def homepage():
