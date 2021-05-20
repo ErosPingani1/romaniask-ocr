@@ -1,7 +1,7 @@
-name = (Name Lastname) cetățean român,
+client_name = (Name Lastname) cetățean român,
 address = cu domiciliul în (Targu Jiu..........),
 id_info = posesor al C.I. seria (GZ) nr (750948), eliberată de (SPCLETP Tg.Jiu),
-cnp = C.N.P (34234234234)  in calitate de LOCATAR. 
+cnp = C.N.P (34234234234) in calitate de LOCATAR. 
 amounts = <b>de (importo) lei pentru perioada de (10 zile -> giorni)</b>
 contract_lenght = 2.6 Prezentul contract s-a încheiat pe o <b>durată de (10 zile -> giorni)</b>, cu începere de la
-dates = <b>data (22/10/2021) până la data de (23/11/2021) </b>, 
+dates = <b>data (22/10/2021) până la data de (23/11/2021)</b>, 
