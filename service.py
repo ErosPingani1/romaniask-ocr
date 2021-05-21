@@ -1,12 +1,12 @@
 import os
 import base64
 from ocr import preprocess_image
+from pdf import generate_pdf_contract
 
-def image_ocr(image):
+def image_ocr(image, contract_info):
     base64_to_img(image)
-    # Creazione PDF da asset
-    # Eliminazione file immagine storata
-    return preprocess_image()
+    id_values = preprocess_image()
+    generate_pdf_contract(id_values, contract_info)
 
 # Image decoded from base64 to .png and saved momentarily
 def base64_to_img(image):
@@ -15,6 +15,7 @@ def base64_to_img(image):
     with open(filename, 'wb') as f:
         f.write(imgdata)
 
-# Image removal from storage
-def delete_image():
+# ID image and compiled documents deleted from storage
+def delete_private_files():
     os.remove('id.png')
+    os.remove('contract_edit.html')

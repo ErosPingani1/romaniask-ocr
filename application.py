@@ -1,7 +1,7 @@
 # Service main file
 from flask import Flask, request
 from flask_cors import CORS
-from service import image_ocr, delete_image
+from service import image_ocr, delete_private_files
 
 app = Flask(__name__) 
 CORS(app)
@@ -13,7 +13,8 @@ def homepage():
 @app.route('/imageocr', methods=['POST'])
 def recognize_image():
     imageB64 = request.get_json()['image']
-    ocr = image_ocr(imageB64)
-    delete_image()
-    return ocr
+    contract_info = request.get_json()['contract_info']
+    image_ocr(imageB64, contract_info)
+    delete_private_files()
+    '''return ocr'''
     
