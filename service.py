@@ -3,10 +3,10 @@ import base64
 from ocr import preprocess_image
 from pdf import generate_pdf_contract
 
-def image_ocr(image, contract_info):
+def image_ocr(image, contractInfo):
     base64_to_img(image)
     id_values = preprocess_image()
-    generate_pdf_contract(id_values, contract_info)
+    generate_pdf_contract(id_values, contractInfo)
 
 # Image decoded from base64 to .png and saved momentarily
 def base64_to_img(image):

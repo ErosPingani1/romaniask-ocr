@@ -11,7 +11,7 @@ def generate_contract_copy():
 def create_pdf():
     pdfkit.from_file('contract_edit.html', 'contract.pdf')
 
-def edit_contract_values(soup, id_values, contract_info):
+def edit_contract_values(soup, id_values, contractInfo):
     client_name = soup.find(class_='client_name')
     client_name.string = id_values['lastname'] + ' ' + id_values['name'] + ' cetățean român,'
 
@@ -25,13 +25,13 @@ def edit_contract_values(soup, id_values, contract_info):
     cnp.string = 'C.N.P ' + id_values['cnp']
 
     amounts = soup.find(class_='amounts')
-    amounts.string = 'de ' + contract_info['amount'] + ' lei pentru perioada de ' + contract_info['length'] + ' zile'
+    amounts.string = 'de ' + contractInfo['amount'] + ' lei pentru perioada de ' + contractInfo['length'] + ' zile'
 
     contract_length = soup.find(class_='contract_length')
-    contract_length.string = 'durată de ' + contract_info['length'] + ' zile'
+    contract_length.string = 'durată de ' + contractInfo['length'] + ' zile'
 
     dates = soup.find(class_='dates')
-    dates.string = 'data ' + contract_info['starting_date'] + ' până la data de ' + contract_info['ending_date'] + ','
+    dates.string = 'data ' + contractInfo['startingDate'] + ' până la data de ' + contractInfo['endingDate'] + ','
 
     with open(filename, 'wb') as file:
         file.write(soup.prettify('utf-8'))

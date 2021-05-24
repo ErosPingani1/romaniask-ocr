@@ -1,5 +1,5 @@
 # Service main file
-from flask import Flask, request
+from flask import Flask, request, send_file
 from flask_cors import CORS
 from service import image_ocr, delete_private_files
 
@@ -13,8 +13,9 @@ def homepage():
 @app.route('/imageocr', methods=['POST'])
 def recognize_image():
     imageB64 = request.get_json()['image']
-    contract_info = request.get_json()['contract_info']
-    image_ocr(imageB64, contract_info)
+    contractInfo = request.get_json()['contractInfo']
+    image_ocr(imageB64, contractInfo)
     delete_private_files()
-    '''return ocr'''
+    with open('contract.pdf', 'rb') as contract:
+        return send_file(contract, attachment_filename='contract.pdf')
     
