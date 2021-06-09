@@ -2,6 +2,7 @@
 from flask import Flask, request, send_file
 from flask_cors import CORS
 from service import image_ocr, delete_private_files
+import os
 
 app = Flask(__name__) 
 CORS(app)
@@ -16,6 +17,4 @@ def recognize_image():
     contractInfo = request.get_json()['contractInfo']
     image_ocr(imageB64, contractInfo)
     delete_private_files()
-    with open('contract.pdf', 'rb') as contract:
-        return send_file(contract, attachment_filename='contract.pdf')
-    
+    return send_file('contract.pdf', as_attachment=True)
